@@ -7,6 +7,7 @@ resources:
 - base/cert-manager.yaml
 - base/nginx-ingress.yaml
 - base/jenkins.yaml
+- base/datadog.yaml
 - base/prometheus-operator-ns.yaml
 - base/prometheus-operator.yaml
 
