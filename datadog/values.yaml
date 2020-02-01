@@ -1,0 +1,7 @@
+datadog:
+  apiKeyExistingSecret: datadog-secret
+  logsEnabled: true
+  logsConfigContainerCollectAll: true
+  nonLocalTraffic: true
+  processAgentEnabled: true
+  logLevel: ERROR
