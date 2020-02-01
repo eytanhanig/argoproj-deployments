@@ -2,12 +2,17 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: datadog
+  namespace: datadog
 spec:
   source:
     path: datadog
     repoURL: https://github.com/eytanhanig/argoproj-deployments
-    targetRevision: HEAD
+    targetRevision: master
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: datadog
   project: argoproj-deployments
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
