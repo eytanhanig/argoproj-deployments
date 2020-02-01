@@ -5,7 +5,7 @@ metadata:
 spec:
   source:
     path: jenkins
-    repoURL: https://github.com/argoproj/argoproj-deployments
+    repoURL: https://github.com/eytanhanig/argoproj-deployments
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'

@@ -6,7 +6,7 @@ spec:
   project: default
   source:
     path: prometheus-operator
-    repoURL: https://github.com/argoproj/argoproj-deployments
+    repoURL: https://github.com/eytanhanig/argoproj-deployments
     targetRevision: HEAD
   destination:
     server: 'https://kubernetes.default.svc'
