@@ -6,7 +6,7 @@ metadata:
 spec:
   source:
     path: datadog
-    repoURL: https://github.com/eytanhanig/argoproj-deployments
+    repoURL: https://github.com/eytanhanig/argoproj-deployments.git
     targetRevision: master
   destination:
     server: 'https://kubernetes.default.svc'
