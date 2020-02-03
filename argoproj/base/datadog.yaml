@@ -2,7 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: datadog
-  # namespace: argocd
 spec:
   source:
     path: datadog
@@ -11,8 +10,4 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: datadog
-  project: argoproj-deployments
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  project: default
