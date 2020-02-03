@@ -1,0 +1,6 @@
+dependencies:
+- name: datadog
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 1.39.6
+digest: sha256:06e3b4aac638d4f039460e270aef493993e411b745bc4469928c7b549952e3aa
+generated: "2020-02-03T13:06:28.35877-08:00"
