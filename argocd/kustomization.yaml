@@ -1,29 +1,41 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+###--- HA
 resources:
-- base/argo-cd-issuer.yaml
-- base/argo-cd-certificate.yaml
-- base/http01-ingress.yaml
-- base/argo-cd-ui-ingress.yaml
-- base/jenkins-ingress.yaml
+# - base/argo-cd-issuer.yaml
+# - base/argo-cd-certificate.yaml
+# - base/http01-ingress.yaml
+# - base/argo-cd-ui-ingress.yaml
+# # - base/argo-cd-secret.yaml
+# # - base/jenkins-ingress.yaml
 - github.com/argoproj/argo-cd//manifests/ha/cluster-install?ref=release-1.4
-- github.com/argoproj-labs/argocd-notifications//manifests/base?ref=release-0.3
+# - github.com/argoproj-labs/argocd-notifications//manifests/base?ref=release-0.3
+
+# resources:
+# - github.com/argoproj/argo-cd//manifests/install.yaml?ref=release-1.4
 
 
 patchesStrategicMerge:
-- overlays/production/argo-cd-cm.yaml
-- overlays/production/argocd-server-service.yaml
-- overlays/production/argocd-server-deploy.yaml
-- overlays/production/argocd-repo-server-deploy.yaml
-- overlays/production/argocd-notifications-cm.yaml
+# - overlays/eytan/argo-cd-cm.yaml
+# - overlays/eytan/argocd-server-service.yaml
+# - overlays/eytan/argocd-server-deploy.yaml
+# - overlays/eytan/argocd-repo-server-deploy.yaml
+# - overlays/eytan/argocd-notifications-cm.yaml
+- overlays/eytan/argo-cd-argocd-secret.yaml
 
 namespace: argocd
 
 images:
 - name: argoproj/argocd
-  newName: docker.pkg.github.com/argoproj/argo-cd/argocd
-  newTag: 1.5.0-949808f0
-- name: argoprojlabs/argocd-notifications
-  newName: docker.pkg.github.com/argoproj-labs/argocd-notifications/argocd-notifications
-  newTag: 0.5.0-6c75688f
+  ###--- https://hub.docker.com/r/argoproj/argocd/tags
+  newName: argoproj/argocd
+  newTag: v1.4.0
+  # newTag: v1.4.1
+  # newTag: v1.4.2
+# - name: argoprojlabs/argocd-notifications
+#   ###--- Ref: https://hub.docker.com/r/argoprojlabs/argocd-notifications/tags
+#   newName: argoprojlabs/argocd-notifications
+#   newTag: v0.4.0
+#   # newTag: v0.4.1
+#   # newTag: v0.4.2
