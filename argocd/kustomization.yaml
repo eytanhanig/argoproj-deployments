@@ -30,8 +30,8 @@ images:
 - name: argoproj/argocd
   ###--- https://hub.docker.com/r/argoproj/argocd/tags
   newName: argoproj/argocd
-  newTag: v1.4.0
-  # newTag: v1.4.1
+  # newTag: v1.4.0
+  newTag: v1.4.1
   # newTag: v1.4.2
 # - name: argoprojlabs/argocd-notifications
 #   ###--- Ref: https://hub.docker.com/r/argoprojlabs/argocd-notifications/tags
