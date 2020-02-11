@@ -1,4 +1,5 @@
 resources:
+- base/sealed-secrets.yaml
 - base/ingress-ns.yaml
 - base/argoci-ns.yaml
 - base/argoci-workflows-ns.yaml

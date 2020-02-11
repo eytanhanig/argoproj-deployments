@@ -1,0 +1,6 @@
+# # https://github.com/helm/charts/tree/master/stable/sealed-secrets
+# sealed-secrets:
+#   crd:
+#     create: false
+#     # crd.keep: `true` if the sealed secret CRD should be kept when the chart is deleted
+#     keep: false
