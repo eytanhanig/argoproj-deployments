@@ -1,7 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-###--- HA
 resources:
 # - base/argo-cd-issuer.yaml
 # - base/argo-cd-certificate.yaml
@@ -12,17 +11,13 @@ resources:
 - github.com/argoproj/argo-cd//manifests/ha/cluster-install?ref=release-1.4
 # - github.com/argoproj-labs/argocd-notifications//manifests/base?ref=release-0.3
 
-# resources:
-# - github.com/argoproj/argo-cd//manifests/install.yaml?ref=release-1.4
-
-
 patchesStrategicMerge:
-# - overlays/eytan/argo-cd-cm.yaml
-# - overlays/eytan/argocd-server-service.yaml
-# - overlays/eytan/argocd-server-deploy.yaml
-# - overlays/eytan/argocd-repo-server-deploy.yaml
-# - overlays/eytan/argocd-notifications-cm.yaml
-- overlays/eytan/argo-cd-argocd-secret.yaml
+- overlays/common/argo-cd-cm.yaml
+- overlays/common/argo-cd-argocd-secret.yaml
+# - overlays/common/argocd-server-service.yaml
+# - overlays/common/argocd-server-deploy.yaml
+# - overlays/common/argocd-repo-server-deploy.yaml
+# - overlays/common/argocd-notifications-cm.yaml
 
 namespace: argocd
 
