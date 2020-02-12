@@ -1,14 +1,14 @@
 resources:
 - base/sealed-secrets.yaml
-- base/ingress-ns.yaml
-- base/argoci-ns.yaml
-- base/argoci-workflows-ns.yaml
+# - base/ingress-ns.yaml
+# - base/argoci-ns.yaml
+# - base/argoci-workflows-ns.yaml
 - base/argocd.yaml
-- base/argoci.yaml
-- base/cert-manager.yaml
-- base/nginx-ingress.yaml
-- base/jenkins.yaml
+# - base/argoci.yaml
+# - base/cert-manager.yaml
+# - base/nginx-ingress.yaml
+# - base/jenkins.yaml
 - base/datadog.yaml
-- base/prometheus-operator-ns.yaml
-- base/prometheus-operator.yaml
+# - base/prometheus-operator-ns.yaml
+# - base/prometheus-operator.yaml
 
