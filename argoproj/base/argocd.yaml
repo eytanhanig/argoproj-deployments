@@ -6,11 +6,15 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/eytanhanig/argoproj-deployments
+    repoURL: 'https://github.com/eytanhanig/argoproj-deployments'
     path: argocd
     targetRevision: master
+    kustomize:
+      patchesStrategicMerge:
+      - overlays/common/argo-cd-cm.yaml
+      - overlays/common/argo-cd-argocd-secret.yaml
   destination:
-    server: https://kubernetes.default.svc
+    server: 'https://kubernetes.default.svc'
     namespace: argocd
   syncPolicy:
     automated:
