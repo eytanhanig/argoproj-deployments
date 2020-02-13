@@ -10,9 +10,9 @@ spec:
     path: argocd
     targetRevision: master
     kustomize:
-      patchesStrategicMerge:
-      - overlays/x/argo-cd-cm.yaml
-      - overlays/x/argo-cd-argocd-secret.yaml
+      # patchesStrategicMerge:
+      # - overlays/x/argo-cd-cm.yaml
+      # - overlays/x/argo-cd-argocd-secret.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
