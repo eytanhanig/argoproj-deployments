@@ -8,12 +8,16 @@ resources:
 # - base/argo-cd-ui-ingress.yaml
 # # - base/argo-cd-secret.yaml
 # # - base/jenkins-ingress.yaml
+- base/argocd-namespace.yaml
+# - overlays/common/argocd-sealedsecret.yaml
+- overlays/common/sealed-argocd-github-secret.yaml
 - github.com/argoproj/argo-cd//manifests/ha/cluster-install?ref=release-1.4
 # - github.com/argoproj-labs/argocd-notifications//manifests/base?ref=release-0.3
 
 patchesStrategicMerge:
-- overlays/common/argo-cd-cm.yaml
-- overlays/common/argo-cd-argocd-secret.yaml
+- overlays/common/argocd-secret.yaml
+- overlays/common/argocd-cm.yaml
+# - overlays/common/argocd-sealedsecret.yaml
 # - overlays/common/argocd-server-service.yaml
 # - overlays/common/argocd-server-deploy.yaml
 # - overlays/common/argocd-repo-server-deploy.yaml
@@ -26,7 +30,7 @@ images:
   ###--- https://hub.docker.com/r/argoproj/argocd/tags
   newName: argoproj/argocd
   # newTag: v1.4.0
-  newTag: v1.4.1
+  newTag: v1.4.2
   # newTag: v1.4.2
 # - name: argoprojlabs/argocd-notifications
 #   ###--- Ref: https://hub.docker.com/r/argoprojlabs/argocd-notifications/tags

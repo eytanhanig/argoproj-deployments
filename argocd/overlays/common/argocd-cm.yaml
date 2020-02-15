@@ -2,7 +2,18 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: argocd-cm
+  # namespace: argocd
+  # labels:
+  #   app.kubernetes.io/name: argocd-cm
+  #   app.kubernetes.io/part-of: argocd
 data:
+  repositories: |
+    - url: git@github.com:OtoAnalytics/helm-charts
+      name: helm-charts
+      sshPrivateKeySecret:
+        name: argocd-github
+        key: sshPrivateKey
+
   # Enables application status badge feature
   statusbadge.enabled: 'true'
 
@@ -14,29 +25,18 @@ data:
   # the text for getting chat help, defaults to "Chat now!"
   help.chatText: 'Slack Channel (#kubernetes)'
 
-  repositories: |
-    - url: https://github.com/eytanhanig/argoproj-deployments
-      # passwordSecret:
-      #   name: my-secret
-      #   key: password
-      # usernameSecret:
-      #   name: my-secret
-      #   key: username
-      # sshPrivateKeySecret:
-      #   name: my-secret
-      #   key: sshPrivateKey
-    # - type: helm
-    #   url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
-    #   name: istio.io
-    # - type: helm
-    #   url: https://my-private-chart-repo.internal
-    #   name: private-repo
-    #   usernameSecret:
-    #     name: my-secret
-    #     key: username
-    #   passwordSecret:
-    #     name: my-secret
-    #     key: password
+#     - type: helm
+#       url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
+#       name: istio.io
+#     - type: helm
+#       url: https://my-private-chart-repo.internal
+#       name: private-repo
+#       usernameSecret:
+#         name: my-secret
+#         key: username
+#       passwordSecret:
+#         name: my-secret
+#         key: password
 
 
   # url: https://cd.apps.argoproj.io
