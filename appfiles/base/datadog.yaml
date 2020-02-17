@@ -7,6 +7,10 @@ spec:
     path: datadog
     repoURL: https://github.com/eytanhanig/argoproj-deployments.git
     targetRevision: master
+    # I'm in the process of testing this:
+    helm:
+      valueFiles:
+        - ../../datadog/environments/eytan/values.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: datadog

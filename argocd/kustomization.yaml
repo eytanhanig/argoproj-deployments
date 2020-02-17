@@ -25,16 +25,16 @@ patchesStrategicMerge:
 
 namespace: argocd
 
-images:
-- name: argoproj/argocd
-  ###--- https://hub.docker.com/r/argoproj/argocd/tags
-  newName: argoproj/argocd
-  # newTag: v1.4.0
-  newTag: v1.4.2
-  # newTag: v1.4.2
-# - name: argoprojlabs/argocd-notifications
-#   ###--- Ref: https://hub.docker.com/r/argoprojlabs/argocd-notifications/tags
-#   newName: argoprojlabs/argocd-notifications
-#   newTag: v0.4.0
-#   # newTag: v0.4.1
-#   # newTag: v0.4.2
+# images:
+# - name: argoproj/argocd
+#   ###--- https://hub.docker.com/r/argoproj/argocd/tags
+#   newName: argoproj/argocd
+#   # newTag: v1.4.0
+#   newTag: v1.4.2
+#   # newTag: v1.4.2
+# # - name: argoprojlabs/argocd-notifications
+# #   ###--- Ref: https://hub.docker.com/r/argoprojlabs/argocd-notifications/tags
+# #   newName: argoprojlabs/argocd-notifications
+# #   newTag: v0.4.0
+# #   # newTag: v0.4.1
+# #   # newTag: v0.4.2

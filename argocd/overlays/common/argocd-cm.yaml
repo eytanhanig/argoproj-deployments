@@ -20,11 +20,6 @@ data:
   # Enables anonymous user access. The anonymous users get default role permissions specified argocd-rbac-cm.yaml.
   users.anonymous.enabled: "false"
 
-  # the URL for getting chat help, this will typically be your Slack channel for support
-  help.chatUrl: 'https://womply.slack.com/kubernetes'
-  # the text for getting chat help, defaults to "Chat now!"
-  help.chatText: 'Slack Channel (#kubernetes)'
-
 #     - type: helm
 #       url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
 #       name: istio.io

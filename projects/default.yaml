@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: default
+  namespace: argocd
+spec:
+  description: Default Project
+
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - '*'
+
+  # Only permit applications to deploy to the same cluster as ArgoCD
+  destinations:
+  - namespace: '*'
+    server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'

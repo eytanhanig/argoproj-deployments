@@ -9,10 +9,10 @@ spec:
     repoURL: 'https://github.com/eytanhanig/argoproj-deployments'
     path: argocd
     targetRevision: master
-    kustomize:
+    # kustomize:
       # patchesStrategicMerge:
-      # - overlays/x/argo-cd-cm.yaml
-      # - overlays/x/argo-cd-argocd-secret.yaml
+      # - overlays/x/argocd-cm.yaml
+      # - overlays/x/argocd-secret.yaml
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
