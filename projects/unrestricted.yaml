@@ -1,9 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: default
+  name: unrestricted
   namespace: argocd
 spec:
+  description: Unlimited Privileges
   sourceRepos:
   - '*'
   destinations:
