@@ -2,14 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-# - base/argo-cd-issuer.yaml
-# - base/argo-cd-certificate.yaml
-# - base/http01-ingress.yaml
-# - base/argo-cd-ui-ingress.yaml
-# # - base/argo-cd-secret.yaml
-# # - base/jenkins-ingress.yaml
 - base/argocd-namespace.yaml
-# - overlays/common/argocd-sealedsecret.yaml
 - overlays/common/sealed-argocd-github-secret.yaml
 - github.com/argoproj/argo-cd//manifests/ha/cluster-install?ref=release-1.4
 # - github.com/argoproj-labs/argocd-notifications//manifests/base?ref=release-0.3
