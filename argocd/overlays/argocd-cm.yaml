@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   repositories: |
-    - url: git@github.com:OtoAnalytics/helm-charts
-      name: helm-charts
+    - url: git@github.com:OtoAnalytics/infra-charts
+      name: infra-charts
       sshPrivateKeySecret:
         name: argocd-github
         key: sshPrivateKey

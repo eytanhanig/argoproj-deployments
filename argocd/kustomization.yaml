@@ -3,18 +3,12 @@ kind: Kustomization
 
 resources:
 - base/argocd-namespace.yaml
-- overlays/common/sealed-argocd-github-secret.yaml
+- base/sealed-argocd-github-secret.yaml
 - github.com/argoproj/argo-cd//manifests/ha/cluster-install?ref=release-1.4
-# - github.com/argoproj-labs/argocd-notifications//manifests/base?ref=release-0.3
 
 patchesStrategicMerge:
-- overlays/common/argocd-secret.yaml
-- overlays/common/argocd-cm.yaml
-# - overlays/common/argocd-sealedsecret.yaml
-# - overlays/common/argocd-server-service.yaml
-# - overlays/common/argocd-server-deploy.yaml
-# - overlays/common/argocd-repo-server-deploy.yaml
-# - overlays/common/argocd-notifications-cm.yaml
+- overlays/argocd-cm.yaml
+- overlays/argocd-secret.yaml
 
 namespace: argocd
 
