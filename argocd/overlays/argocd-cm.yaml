@@ -7,70 +7,24 @@ metadata:
     app.kubernetes.io/part-of: argocd
 data:
   repositories: |
-    - url: git@github.com:OtoAnalytics/infra-charts
-      name: infra-charts
+    - url: git@github.com:OtoAnalytics/infra-manifests
+      name: infra-manifests
       sshPrivateKeySecret:
         name: argocd-github
         key: sshPrivateKey
     - url: https://github.com/eytanhanig/argoproj-deployments
-      name: eytan-argoproj-deployments
+      name: argoproj-deployments
+    - url: https://github.com/argoproj/argocd-example-apps.git
+      name: example-apps
+    - type: helm
+      url: https://kubernetes-charts.storage.googleapis.com
+      name: stable
+    - type: helm
+      url: https://argoproj.github.io/argo-helm
+      name: argo
 
   # Enables application status badge feature
   statusbadge.enabled: 'true'
 
   # Enables anonymous user access. The anonymous users get default role permissions specified argocd-rbac-cm.yaml.
   users.anonymous.enabled: "false"
-
-#     - type: helm
-#       url: https://storage.googleapis.com/istio-prerelease/daily-build/master-latest-daily/charts
-#       name: istio.io
-#     - type: helm
-#       url: https://my-private-chart-repo.internal
-#       name: private-repo
-#       usernameSecret:
-#         name: my-secret
-#         key: username
-#       passwordSecret:
-#         name: my-secret
-#         key: password
-
-
-
-
-  # resource.customizations: |
-  #   cert-manager.io/Certificate:
-  #     health.lua: |
-  #       hs = {}
-  #       if obj.status ~= nil then
-  #         if obj.status.conditions ~= nil then
-  #           for i, condition in ipairs(obj.status.conditions) do
-  #             if condition.type == "Ready" and condition.status == "True" then
-  #               hs.status = "Healthy"
-  #               hs.message = condition.message
-  #               return hs
-  #             end
-  #           end
-  #         end
-  #       end
-
-  #       hs.status = "Progressing"
-  #       hs.message = "Waiting for certificate"
-  #       return hs
-  #   cert-manager.io/Issuer:
-  #     health.lua: |
-  #       hs = {}
-  #       if obj.status ~= nil then
-  #         if obj.status.conditions ~= nil then
-  #           for i, condition in ipairs(obj.status.conditions) do
-  #             if condition.type == "Ready" and condition.status == "True" then
-  #               hs.status = "Healthy"
-  #               hs.message = condition.message
-  #               return hs
-  #             end
-  #           end
-  #         end
-  #       end
-
-  #       hs.status = "Progressing"
-  #       hs.message = "Waiting for certificate"
-  #       return hs
