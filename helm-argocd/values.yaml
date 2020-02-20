@@ -7,7 +7,7 @@ argo-cd:
 
   # Optional CRD installation for those without Helm hooks
   # default is true, set to false for Helm 3
-  installCRDs: false
+  installCRDs: true
 
   # global:
   #   image:
