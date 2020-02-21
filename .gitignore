@@ -6,6 +6,11 @@ bin/*
 /.bin
 /_test/secrets/*.json
 
+
+#####
+# OS & Editor Files
+#####
+
 # OSX leaves these everywhere on SMB shares
 ._*
 
@@ -31,21 +36,42 @@ bin/*
 Session.vim
 .netrwhist
 
-# Helm Chart dependencies
-**/charts/*.tgz
-
 .history
+
+
+#####
+# Local development
+#####
+
+# Files for local development only
+localdev*
+**/rendered/*.yaml
 
 # Brew
 Brewfile.lock.json
 
-# Files for local development only
-localdev*
-
-# Temporary files
+# Locally generated private SSH keys
+id_rsa
 id_ed25519
-# id_ed25519.pub
-unsealed*
-**/rendered/*.yaml
 
+
+#####
+# Helm
+#####
+
+# Helm Chart dependencies
+**/charts/*.tgz
+
+# Re-enable this once we have a make command to update pre-commit and CircleCI test to confirm it is current
 requirements.lock
+
+
+#####
+# Sealed-Secrets
+#####
+
+# Backup for sealed-secrets Master Key
+master.key
+
+# sealed-secrets unencrypted files
+unsealed*
