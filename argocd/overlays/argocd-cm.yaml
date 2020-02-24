@@ -12,7 +12,9 @@ data:
       sshPrivateKeySecret:
         name: argocd-github
         key: sshPrivateKey
-    - url: https://github.com/eytanhanig/argoproj-deployments
+    - url: https://github.com/eytanhanig/eytan-deployments
+      name: eytan-deployments
+    - url: https://github.com/argoproj/argoproj-deployments
       name: argoproj-deployments
     - url: https://github.com/argoproj/argocd-example-apps.git
       name: example-apps

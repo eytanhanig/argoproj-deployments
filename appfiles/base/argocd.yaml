@@ -7,14 +7,14 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/eytanhanig/argoproj-deployments'
+    targetRevision: eytan
     path: argocd
-    targetRevision: master
     # kustomize:
       # patchesStrategicMerge:
       # - overlays/x/argocd-cm.yaml
       # - overlays/x/argocd-secret.yaml
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
     automated:
